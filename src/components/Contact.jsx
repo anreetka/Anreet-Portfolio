@@ -16,9 +16,40 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const handleChange = (e)=>{}
+  const handleChange = (e)=>{
+    const {name, value} = e.target;
+    setForm({...form, [name]: value});
+  }
 
-  const handleSubmit = (e)=>{}
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send(
+      (import.meta.env.VITE_REACT_SERVICE_ID),
+      (import.meta.env.VITE_REACT_TEMPLATE_ID),
+      {
+        from_name: form.name,
+        to_name: 'Anreet',
+        from_email: form.email,
+        to_email: 'anreetkaur04@gmail.com',
+        message: form.message,
+      }, (import.meta.env.VITE_REACT_PUBLIC_ID))
+      .then(()=>{
+        setLoading(false);
+        alert('Thank you! I will get back to you as soon as possible.');
+
+        setForm({
+          name: '',
+          email: '',
+          message: ''
+        }, (error)=>{
+          setLoading(false);
+          console.log(error);
+          alert('something went wrong')
+        })
+      })
+  } 
 
   return (
     <div
