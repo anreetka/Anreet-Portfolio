@@ -8,7 +8,7 @@ import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
 
-const ProjectCard = ({index, name, description, tags, image, source_code}) =>{
+const ProjectCard = ({index, name, description, tags, image, source_code_link}) =>{
   return(
     <motion.div 
     variants={fadeIn('up', 'spring', index * 0.5, 0.75)}>
@@ -57,9 +57,7 @@ const Works = () => {
       <div className='w-full flex'>
         <motion.p
         variants={fadeIn("","", 0.1, 1 )} className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-          Following projects showcase y skills and experience through real-world examples of my work. Each project is briefly
-          described with links to code repositores and live demos in it. It reflects my ability to solve complex problems, work with different
-          technologies and manage projects effectively.
+          Here's some of the projects that I have worked on during hackathons, classes as well as outside of class:
         </motion.p>
       </div>
 

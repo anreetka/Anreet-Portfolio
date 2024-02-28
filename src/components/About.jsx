@@ -39,15 +39,17 @@ const About = () => {
 
       <motion.p variants={fadeIn("", "", 0.1, 1)}
       className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'>
-        I'm a skilled software developer with experience in TypeScript and JavaScript and expertise
-        in frameworks like React, Node.js, and Three.js. I'm a quick learer and collaborate closely
-        with clients to create effective, scalable, and user-friendly solutions that solve real world
+        I'm a second year computer science student with a strong interest in full stack web development
+        and machine learning. I have been to 4 hackathons so far and have won 2 of them. I have experience working
+        with React, Flask, MongoDB, Java, JavaScript, Node.js, Express, SQL and Unreal Engine. I'm a quick 
+        learner and have always collaborated closely with others during hackathons to create effective, 
+        scalable, and user-friendly solutions that solve real world
         problems. Let's work together to bring your ideas to life!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index)=>(
-          <ServiceCard key={services.title} index={index} {...service} />
+          <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
     </>
